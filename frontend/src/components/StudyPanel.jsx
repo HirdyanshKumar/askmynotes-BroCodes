@@ -133,7 +133,7 @@ export default function StudyPanel({ subjects, activeSubjectId }) {
                 <div className={`explain ${picked[qi] === mcq.correct ? 'explain-ok' : 'explain-no'}`}>
                   <strong>{picked[qi] === mcq.correct ? '✓ Correct!' : `✗ Answer: ${mcq.correct}`}</strong>
                   <p>{mcq.explanation}</p>
-                  <span className="cite">📄 {mcq.citation}</span>
+                  <span className="cite">Ref: {mcq.citation}</span>
                 </div>
               )}
             </div>
@@ -160,7 +160,7 @@ export default function StudyPanel({ subjects, activeSubjectId }) {
               {showSAQ[si] && (
                 <div className="model-answer">
                   <p>{saq.modelAnswer}</p>
-                  <span className="cite">📄 {saq.citation}</span>
+                  <span className="cite">Ref: {saq.citation}</span>
                 </div>
               )}
             </div>

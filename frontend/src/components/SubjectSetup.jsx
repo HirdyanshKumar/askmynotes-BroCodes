@@ -152,16 +152,17 @@ export default function SubjectSetup({ subjects, onRefresh }) {
                 </div>
                 <div className="card-actions">
                   {!isEditing && (
-                    <button className="btn-icon" onClick={() => startRename(s)} title="Rename">
-                      ✏️
+                    <button className="btn-icon" onClick={() => startRename(s)} title="Rename" style={{ fontSize: '0.85rem' }}>
+                      Edit
                     </button>
                   )}
                   <button
                     className="btn-icon btn-icon-danger"
                     onClick={() => handleDelete(s._id, s.name)}
                     title="Delete"
+                    style={{ fontSize: '0.85rem' }}
                   >
-                    🗑️
+                    Del
                   </button>
                 </div>
                 {state === 'done' && <span className="badge-ok">✓ Loaded</span>}
@@ -172,7 +173,7 @@ export default function SubjectSetup({ subjects, onRefresh }) {
                 <div className="file-pills">
                   {s.fileNames.map((fname, fi) => (
                     <span key={fi} className="file-pill">
-                      <span className="file-pill-icon">📄</span>
+                      <span className="file-pill-icon"></span>
                       {fname}
                     </span>
                   ))}
