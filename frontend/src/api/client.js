@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: 'http://localhost:3001' })
+const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3001' })
 
 // Set the Clerk userId as a header on all requests
 export function setUserId(clerkId) {
