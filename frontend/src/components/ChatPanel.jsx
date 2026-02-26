@@ -211,7 +211,7 @@ export default function ChatPanel({ subjects, activeSubjectId, onSubjectChange }
           onClick={toggleSpeaker}
           title={speakerEnabled ? 'Voice answers ON — click to mute' : 'Voice answers OFF — click to unmute'}
         >
-          {speakerEnabled ? '🔊' : '🔇'}
+          {speakerEnabled ? 'Sound On' : 'Sound Off'}
         </button>
         <button className="btn btn-ghost" onClick={() => setMessages([])}>Clear</button>
       </div>
@@ -220,7 +220,7 @@ export default function ChatPanel({ subjects, activeSubjectId, onSubjectChange }
       <div className="chat-msgs">
         {noSubject ? (
           <div className="empty">
-            <span className="empty-icon">💬</span>
+            <span className="empty-icon"></span>
             <p style={{ fontSize: '1.1rem', fontWeight: 600 }}>Welcome to Ask Notes</p>
             {subjects.length > 0 ? (
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -236,7 +236,7 @@ export default function ChatPanel({ subjects, activeSubjectId, onSubjectChange }
           <>
             {messages.length === 0 && (
               <div className="empty">
-                <span className="empty-icon">💬</span>
+                <span className="empty-icon"></span>
                 Ask anything about <strong>{subject?.name}</strong>
               </div>
             )}
@@ -318,7 +318,7 @@ export default function ChatPanel({ subjects, activeSubjectId, onSubjectChange }
               setAskedByVoice(false)
             }}
             onKeyDown={e => e.key === 'Enter' && !e.shiftKey && handleSend()}
-            placeholder={noSubject ? 'Select a subject above to start asking...' : isListening ? '🎤 Listening...' : `Ask about ${subject?.name || 'your notes'}...`}
+            placeholder={noSubject ? 'Select a subject above to start asking...' : isListening ? 'Listening...' : `Ask about ${subject?.name || 'your notes'}...`}
             disabled={loading || noSubject}
           />
           <button
@@ -327,7 +327,7 @@ export default function ChatPanel({ subjects, activeSubjectId, onSubjectChange }
             disabled={loading || noSubject}
             title={isListening ? 'Stop listening' : 'Voice input'}
           >
-            {isListening ? '⏹' : '🎤'}
+            {isListening ? 'Stop' : 'Voice'}
           </button>
         </div>
         <button
